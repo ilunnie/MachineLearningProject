@@ -7,7 +7,7 @@ elasticNet = load('Models/ElasticNet.pkl')
 
 app = Flask(__name__)
 
-@app.route('/DecisionTree', methods=['GET'])
+@app.route('/DecisionTree', methods=['POST'])
 def DecisionTree():
     params = request.json
     if params is None or 'L' not in params:
@@ -18,7 +18,7 @@ def DecisionTree():
     
     return jsonify(predict.tolist())
 
-@app.route('/ElasticNet', methods=['GET'])
+@app.route('/ElasticNet', methods=['POST'])
 def ElasticNet():
     params = request.json
     if params is None or 'L' not in params:
