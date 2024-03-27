@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ColorMine.ColorSpaces;
 using Newtonsoft.Json;
 
 public static class Requester
@@ -40,7 +41,6 @@ public static class Requester
                         result.SetPixel(x, y, rgb);
                     }
 
-                MessageBox.Show(json);
                 return result;
             }
             else throw new HttpRequestException("Unanswered request!");
